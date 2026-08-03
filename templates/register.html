@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+
+    <head>Register Here </head>
+    <h2>Fill Up the Details</h2>
+    <form action="/base/register-user" , method="POST">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <input type="text" name="name" placeholder="Enter your name : " required>
+
+        <input type="email" name="email" placeholder="Enter your emai : " required>
+
+        <input type="number" name="phone_no" placeholder="Enter you phone No : " required>
+
+        <input type="password" name="password" placeholder="Enter your password :" required>
+
+        <input type="password" name="confirm_password" placeholder="Confirm Password :" required>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+
+</html>
